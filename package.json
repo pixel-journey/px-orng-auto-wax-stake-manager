@@ -1,0 +1,8 @@
+{
+  "name": "px-orng-auto-wax-stake-manager",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test invariants/*.test.ts"
+  }
+}
