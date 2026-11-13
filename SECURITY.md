@@ -1,10 +1,9 @@
-# Security
+# Security notes — auto-stake planner
 
-| Surface | Closed by |
+| Mitigated | Behavior |
 | --- | --- |
-| Stake while free covers | enough_free |
-| Stake while paid covers | enough_paid |
-| Zero / oversized stake | bad amount / overflow |
-| Broadcast claim | unsignedStake.sent = false |
+| Enough free/paid | no stake plan |
+| Bad need | refused |
+| Overflow | refused |
 
-Not claimed: live orng.wax rates, actual WAX transfer, wasm.
+Production: only authorized treasury may move WAX; confirm oracle state after stake.
