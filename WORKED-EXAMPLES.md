@@ -1,21 +1,23 @@
-# Worked examples — auto-stake
+# Worked examples — auto WAX stake for free credits
 
-## Example A — enough free
+## Shortfall
 
-freeCredits ≥ need → plan `enough_free`.
+Free 3, need 1 or 3 → shortfall 0. Free 1, need 3 → shortfall 2.
 
-## Example B — enough paid
+## planAutoStake
 
-Gap covered by paidCredits → `enough_paid`.
+Enough free → `enough_free`. Free 0 + paid 2 → `enough_paid`.
 
-## Example C — shortfall
+Empty state, need 1 → `needStake` 1n, `projectedFree` 1, unsigned stake `sent:false`, `to: orng.wax`, memo `stake`.
 
-need 3, free 0, paid 0 → needStake 3n, unsigned stake memo `stake`.
+Need 5 → needStake 5n, projectedFree 5.
 
-## Example D — stage then apply
+## Lifecycle
 
-`ensureCredits` stages pending; `applyStakeCredit(3n)` increases staked and freeCredits, clears pending.
+`ensureCredits(need 2)` → pendingStake 2n, staked still 0.
 
-## Example E — overflow
+`applyStakeCredit(3n)` → staked 3, freeCredits 3.
 
-staked + pending + need > MAX_STAKE → `overflow`.
+Pending 4 then credit 4 → pending 0, staked 4.
+
+Zero amounts and bad dapp refused.
