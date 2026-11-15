@@ -1,9 +1,20 @@
-# Security notes — auto-stake planner
+# Security — auto-stake manager
 
-| Mitigated | Behavior |
+## Closed in tests
+
+| Issue | Behavior |
 | --- | --- |
-| Enough free/paid | no stake plan |
-| Bad need | refused |
-| Overflow | refused |
+| Stake while free/paid enough | plan skipped |
+| Zero stake amount | refused |
+| Bad dapp name | refused |
+| pending cleared only on matching apply | tested |
 
-Production: only authorized treasury may move WAX; confirm oracle state after stake.
+## Not closed
+
+| Concern | Guidance |
+| --- | --- |
+| Live stake economics | Confirm with current orng.wax |
+| Who can trigger stake | Auth on the funding account |
+| Double-apply credit | Idempotent settlement required on chain |
+
+Unsent plans only in this repository.
