@@ -25,4 +25,10 @@ Pending 4 then apply 4 → pending **0**, staked **4**.
 
 Zero amounts and bad dapp name refused.
 
+## Funding order
+
+1. Free → 2. Paid ([topup](https://github.com/pixel-journey/px-orng-pay-per-use-topup-vault)) → 3. Stake (this lab).
+
+Pending stake is **not** free credits until `applyStakeCredit`. Stake is **not** CPU powerup ([sponsor pool](https://github.com/pixel-journey/px-cpu-eosio-powerup-sponsor-pool)).
+
 No live stake to orng.wax — planning only.
