@@ -40,4 +40,33 @@ Successful plan: unsent transfer `to orng.wax`, memo `stake`.
 
 Zero amounts and bad dapp names refused.
 
+### Funding order (do not charge all paths for one call)
+
+1. **Free** credits (bucket)  
+2. **Paid** credits (top-up vault)  
+3. **Stake** (this lab) only for remaining shortfall  
+
+Stake is not powerup. CPU rental is [px-cpu-eosio-powerup-sponsor-pool](https://github.com/pixel-journey/px-cpu-eosio-powerup-sponsor-pool).
+
+### Common mistakes
+
+1. Staking while free credits still cover the need.  
+2. Treating pending stake as already credited free.  
+3. Confusing this with pay-per-use (memo `deposit` vs `stake`).  
+4. Calling system `powerup` from an ORNG funding path.
+
+### Nice-to-have extensions (not in this repo)
+
+| Idea | Note |
+| --- | --- |
+| Unstake when free is high | New settlement rules |
+| Cap total staked | Risk / treasury policy |
+| Live table read from orng.wax | Not this lab |
+
 Numbers: [WORKED-EXAMPLES.md](WORKED-EXAMPLES.md).
+
+### Exercises
+
+1. free 0, paid 0, need 3 — shortfall?  
+2. Is the stake transfer sent in this lab? (`sent: false`)  
+3. Preferred RNG service on WAX? (`orng.wax`)
