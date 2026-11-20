@@ -4,7 +4,11 @@ Dapp `pxrngdapp`.
 
 ## freeShortfall
 
-free 3, need 1 or 3 → **0**. free 1, need 3 → **2**.
+| free | need | shortfall |
+| --- | --- | --- |
+| 3 | 1 | **0** |
+| 3 | 3 | **0** |
+| 1 | 3 | **2** |
 
 ## planAutoStake
 
@@ -15,20 +19,22 @@ free 3, need 1 or 3 → **0**. free 1, need 3 → **2**.
 | empty | 1 | ok, needStake **1**, projectedFree **1** |
 | empty | 5 | needStake **5**, projectedFree **5** |
 
-Successful plan builds **unsent** transfer: `to orng.wax`, memo `stake`.
+Successful plan builds **unsent** transfer: `to orng.wax`, memo **`stake`** (not `deposit`).
 
 ## ensure / apply
 
-`ensureCredits(s, 2)` → pendingStake **2**, staked still 0.
-`applyStakeCredit(s, 3)` → staked **3**, freeCredits **3**.
-Pending 4 then apply 4 → pending **0**, staked **4**.
+| Step | Effect |
+| --- | --- |
+| `ensureCredits(s, 2)` | pendingStake **2**, staked still **0** |
+| `applyStakeCredit(s, 3)` | staked **3**, freeCredits **3** |
+| pending 4 then apply 4 | pending **0**, staked **4** |
 
 Zero amounts and bad dapp name refused.
 
-## Funding order
+## Product facts
 
-1. Free → 2. Paid ([topup](https://github.com/pixel-journey/px-orng-pay-per-use-topup-vault)) → 3. Stake (this lab).
-
-Pending stake is **not** free credits until `applyStakeCredit`. Stake is **not** CPU powerup ([sponsor pool](https://github.com/pixel-journey/px-cpu-eosio-powerup-sponsor-pool)).
-
-No live stake to orng.wax — planning only.
+- **Pending ≠ free** until `applyStakeCredit`.
+- Funding order for one randomness need: **free → paid → stake** (do not charge all paths).
+- Stake memo is `stake`; pay-per-use is a different product (`deposit`).
+- Stake is **not** CPU powerup ([sponsor pool](https://github.com/pixel-journey/px-cpu-eosio-powerup-sponsor-pool)).
+- No live stake to `orng.wax` in this lab — planning only.
