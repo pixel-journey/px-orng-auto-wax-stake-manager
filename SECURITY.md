@@ -31,4 +31,4 @@ Stake is the **last** funding step after free credits and paid top-up. Bodies ar
 
 ## Honesty limits
 
-Unsent plans only. No `orng.wax` and no `eosio::powerup`. Related: [credit bucket](https://github.com/pixel-journey/px-orng-credit-bucket-monitor) · [pay-per-use](https://github.com/pixel-journey/px-orng-pay-per-use-topup-vault) · [ORNG path](https://github.com/pixel-journey/px-contract-examples-vault/blob/main/docs/ORNG-LEARNING-PATH.md).
+Unsent plans only. No `orng.wax` and no `eosio::powerup`. Related: [credit bucket](https://github.com/pixel-journey/px-orng-credit-bucket-monitor) · [pay-per-use](https://github.com/pixel-journey/px-orng-pay-per-use-topup-vault) · `px-contract-examples-vault` (private index; not this public course).

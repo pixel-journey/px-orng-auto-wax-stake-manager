@@ -19,4 +19,4 @@ This repository does not call `orng.wax` or `eosio::powerup`.
 | [pay-per-use](https://github.com/pixel-journey/px-orng-pay-per-use-topup-vault) | 0.01 WAX per missing call |
 | [CPU powerup](https://github.com/pixel-journey/px-cpu-eosio-powerup-sponsor-pool) | Different system action |
 | [v3 starter](https://github.com/pixel-journey/px-orng-v3-randnotify-starter) | Job table after credits pass |
-| [ORNG path](https://github.com/pixel-journey/px-contract-examples-vault/blob/main/docs/ORNG-LEARNING-PATH.md) | Curriculum + funding cheatsheet |
+| `px-contract-examples-vault` (private index; not this public course) | Curriculum + funding cheatsheet |
